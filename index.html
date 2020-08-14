@@ -200,7 +200,7 @@
                 <input type="text" name="dpd" id="dpd" placeholder="dpd" required/>
               </div>            
             </div>
-                 
+            <input type="hidden" id="index" name="index" value="#">
             <button type="submit" href="/">Dial</button>
             <!-- Trigger/Open The Modal -->
             <br><br> 
@@ -226,7 +226,7 @@
             console.log(name);
           }          
             function Campaign(){
-                location.replace("https://6a6da82d6538.ngrok.io")
+                location.replace("https://6a6da82d6538.ngrok.io/?index=0")
             }
         // Get the modal
         var modal = document.getElementById("myModal");
