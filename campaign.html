@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Campaign Page</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+        <style>
+            /* navigationbar */
+            ul {
+              list-style-type: none;
+              margin: 0;
+              padding: 0;
+              overflow: hidden;
+              background-color: #333;
+              position: fixed;
+              top: 0;
+              width: 100%;
+            }
+
+            li {
+              float: left;
+            }
+
+            li a {
+              display: block;
+              color: white;
+              text-align: center;
+              padding: 14px 16px;
+              text-decoration: none;
+            }
+
+            li a:hover:not(.active) {
+              background-color: #111;
+            }
+
+            .active {
+              background-color: #4CAF50;
+            }
+
+            /* table */
+            #customers {
+            font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+            margin-top: 100px;
+            }
+
+            #customers td, #customers th {
+            border: 1px solid #ddd;
+            padding: 8px;
+            }
+
+            #customers tr:nth-child(even){background-color: #f2f2f2;}
+
+            #customers tr:hover {background-color: #ddd;}
+
+            #customers th {
+            padding-top: 12px;
+            padding-bottom: 12px;
+            text-align: left;
+            background-color: #4CAF50;
+            color: white;
+            }
+
+        </style>
+    </head>
+    <body>
+        <ul>
+           <li><a class="active" href="index.html">Home</a></li>
+           <li><a href="#campaign">Campaign</a></li>
+        </ul>
+      
+    
+    
+    
+      
+        <table id="customers">
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Contact</th>
+                <th>Arrears</th>
+                <th>DPD</th>              
+            </tr>           
+              
+            <tbody id="table_data">
+            </tbody>
+            
+        </table>         
+           
+
+            
+        
+
+        <div class="input-form">
+            <div class="list-item">
+              <input type="text" placeholder="enter ID" id=id onfocus="this.value=''">
+              <input type="text" placeholder="enter Name" id=name onfocus="this.value=''">
+              <input type="text" placeholder="enter Contact" id=contact onfocus="this.value=''">
+              <input type="text" placeholder="enter Arrears" id=arrears onfocus="this.value=''">
+              <input type="text" placeholder="enter DPD" id=dpd onfocus="this.value=''">
+              <button id="submit_btn" onclick="storedata()">Add</button>
+            </div>
+        </div>
+
+
+                <!-- The core Firebase JS SDK is always required and must be listed first -->
+        <script src="https://www.gstatic.com/firebasejs/7.20.0/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.20.0/firebase-firestore.js"></script>
+
+        <!-- TODO: Add SDKs for Firebase products that you want to use
+            https://firebase.google.com/docs/web/setup#available-libraries -->
+        <script src="https://www.gstatic.com/firebasejs/7.20.0/firebase-analytics.js"></script>
+
+        <script>
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        var firebaseConfig = {
+            apiKey: "AIzaSyDGDK3pbThjYlx74uyRNcUBMm_i22IVzkc",
+            authDomain: "smartcall-1597297569681.firebaseapp.com",
+            databaseURL: "https://smartcall-1597297569681.firebaseio.com",
+            projectId: "smartcall-1597297569681",
+            storageBucket: "smartcall-1597297569681.appspot.com",
+            messagingSenderId: "945265623485",
+            appId: "1:945265623485:web:8642b45321ba7c0cee12d4",
+            measurementId: "G-9LQFH5DYWQ"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        firebase.analytics();
+        </script>
+        <script src="index.js"></script>
+        
+        
+        <button onclick="window.location.href='call.html'">Start Campaign</button>
+        
+    </body>
+</html>

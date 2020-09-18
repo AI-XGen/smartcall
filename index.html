@@ -5,7 +5,7 @@
         <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
         <style>
-                /* body {font-family: Arial, Helvetica, sans-serif;} */
+           /* body {font-family: Arial, Helvetica, sans-serif;} */
 
                 /* The Modal (background) */
                 .modal {
@@ -171,14 +171,52 @@
             width: 48%;
             }
             }
+
+
+            /* navigationbar */
+            ul {
+              list-style-type: none;
+              margin: 0;
+              padding: 0;
+              overflow: hidden;
+              background-color: #333;
+              position: fixed;
+              top: 0;
+              width: 100%;
+            }
+
+            li {
+              float: left;
+            }
+
+            li a {
+              display: block;
+              color: white;
+              text-align: center;
+              padding: 14px 16px;
+              text-decoration: none;
+            }
+
+            li a:hover:not(.active) {
+              background-color: #111;
+            }
+
+            .active {
+              background-color: #4CAF50;
+            }
         </style>
     </head>
     <body>
-      <div class='tryfucks'>
-      </div>
+     
+      <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+      <ul>
+        <li><a class="active" href="#home">Home</a></li>
+        <li><a href="campaign.html">Campaign</a></li>
+      </ul>
         <div class="main-block">
+          
             <h1>Smart Call</h1>
-        <form action="https://a8e5620454c9.ngrok.io/call" method="GET">
+        <form action="https://2c9cd772d92b.ngrok.io/call" method="GET">
             <div class="info">
               <div class="info-item">
                 <label class="icon" for="name"><i class="fas fa-user"></i></label>
@@ -200,7 +238,7 @@
                 <input type="text" name="dpd" id="dpd" placeholder="dpd" required/>
               </div>            
             </div>
-            <input type="hidden" id="index" name="index" value="999">
+                 
             <button type="submit" href="/">Dial</button>
             <!-- Trigger/Open The Modal -->
             <br><br> 
@@ -212,13 +250,13 @@
             <!-- Modal content -->
             <div class="modal-content">
                 <span class="close">&times;</span>
-                <p>Person Details</p>
+                <p>Person</p>
                 <button id="submit" onclick="Campaign()" type="submit">Start Campaign</button>
             </div>
 
             </div>
         </form>       
-        </div>>
+        </div>
         <script>
           function tryfuck(){
             name = $_GET['name'];
@@ -226,7 +264,16 @@
             console.log(name);
           }          
             function Campaign(){
-                location.replace("https://a8e5620454c9.ngrok.io/?index=0")
+                axios({
+                  url:`https://www.youtube.com`,
+                  method:`GET`
+                })
+                axios({
+                  url:`https://www.google.com`,
+                  method:`GET`
+                })
+                // location.replace("https://www.youtube.com/watch?v=dJCA_RxBXuA&ab_channel=Mrwhosetheboss");
+                // location.replace("https://www.youtube.com/","https://www.youtube.com/watch?v=dJCA_RxBXuA&ab_channel=Mrwhosetheboss")
             }
         // Get the modal
         var modal = document.getElementById("myModal");
@@ -253,7 +300,6 @@
             modal.style.display = "none";
         }
         }
-        </script>
-
+        </script>     
     </body>
 </html>
