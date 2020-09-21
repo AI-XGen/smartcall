@@ -115,8 +115,7 @@ function Caller(){
             if(doc.data().status == "new"){
                 axios({
                     url:`https://05425a500a18.ngrok.io/call?name=${doc.data().name}&arrears=${doc.data().arrears}&number=${doc.data().contact}&dpd=${doc.data().dpd}&index=${doc.data().id}`,
-                    method:`GET`,
-                    mode:`cors`
+                    method:`GET`
                   })
                 
                 return docRef.update({
@@ -144,8 +143,7 @@ function Caller(){
             if(doc.data().status == "new"){
                 axios({
                     url:`https://ed1572733e7d.ngrok.io/call?name=${doc.data().name}&arrears=${doc.data().arrears}&number=${doc.data().contact}&dpd=${doc.data().dpd}&index=${doc.data().id}`,
-                    method:`GET`,
-                    mode:`cors`
+                    method:`GET`
                 })
                 return docRef.update({
                     device: 'device2'
