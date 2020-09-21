@@ -70,7 +70,7 @@ db.collection("caller").onSnapshot(function(querySnapshot) {
 
 
 
-setInterval(Caller, 5000); //calls the function every 5 seconds
+setInterval(Caller, 8000); //calls the function every 5 seconds
 function Caller(){
     
     db.collection("caller").onSnapshot(function(querySnapshot) {
