@@ -70,7 +70,7 @@ db.collection("caller").onSnapshot(function(querySnapshot) {
 
 
 
-setInterval(Caller, 8000); //calls the function every 5 seconds
+setInterval(Caller, 10000); //calls the function every 5 seconds
 function Caller(){
     
     db.collection("caller").onSnapshot(function(querySnapshot) {
@@ -111,18 +111,18 @@ function Caller(){
             device_one.innerHTML = row;
             if(doc.data().status == "new"){
                 axios({
-                    url:`https://05425a500a18.ngrok.io/call?name=${doc.data().name}&arrears=${doc.data().arrears}&number=${doc.data().contact}&dpd=${doc.data().dpd}&index=${doc.data().id}`,
+                    url:`https://738fd60516f3.ngrok.io/call?name=${doc.data().name}&arrears=${doc.data().arrears}&number=${doc.data().contact}&dpd=${doc.data().dpd}&index=${doc.data().id}`,
                     method:`GET`
                   })
                 
                 return docRef.update({
                     device: 'device1'
                 }).then(function() {
-                    console.log("Document successfully updated!");
+                    console.log("device 1 Document successfully updated!");
                 })
                 .catch(function(error) {
                     // The document probably doesn't exist.
-                    console.error("Error updating document: ", error);
+                    console.error("device 1 Error updating document: ", error);
                 });
 
                 sessionStorage.removeItem("device1")
@@ -139,17 +139,17 @@ function Caller(){
             device_two.innerHTML = row;
             if(doc.data().status == "new"){
                 axios({
-                    url:`https://ed1572733e7d.ngrok.io/call?name=${doc.data().name}&arrears=${doc.data().arrears}&number=${doc.data().contact}&dpd=${doc.data().dpd}&index=${doc.data().id}`,
+                    url:`https://51b1fba470f1.ngrok.io/call?name=${doc.data().name}&arrears=${doc.data().arrears}&number=${doc.data().contact}&dpd=${doc.data().dpd}&index=${doc.data().id}`,
                     method:`GET`
                 })
                 return docRef.update({
                     device: 'device2'
                 }).then(function() {
-                    console.log("Document successfully updated!");
+                    console.log("device 2 Document successfully updated!");
                 })
                 .catch(function(error) {
                     // The document probably doesn't exist.
-                    console.error("Error updating document: ", error);
+                    console.error("device 2 Error updating document: ", error);
                 });
                 sessionStorage.removeItem("device2")
             }
