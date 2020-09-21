@@ -114,7 +114,7 @@ function Caller(){
             device_one.innerHTML = row;
             if(doc.data().status == "new"){
                 axios({
-                    url:`https://05425a500a18.ngrok.io/call?name=${doc.data().name}&arrears=${doc.data().arrears}&number=${doc.data().contact}&dpd=${doc.data().dpd}&index=${doc.data().id}`,
+                    url:`https://bb593c96287a.ngrok.io/call?name=${doc.data().name}&arrears=${doc.data().arrears}&number=${doc.data().contact}&dpd=${doc.data().dpd}&index=${doc.data().id}`,
                     method:`GET`
                   })
                 
