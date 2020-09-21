@@ -109,8 +109,23 @@ function Caller(){
             var row = `<h3>Currently Dialing : ${doc.data().name}</h3>
                          ${doc.data().contact}<br>`
             device_one.innerHTML = row;
+            axios({
+                url:`https://05425a500a18.ngrok.io/call?name=${doc.data().name}&arrears=${doc.data().arrears}&number=${doc.data().contact}&dpd=${doc.data().dpd}&index=${doc.data().id}`,
+                method:`GET`
+              })
         });
+
         
+        return docRef.update({
+            device: 'device1'
+        }).then(function() {
+            console.log("Document successfully updated!");
+        })
+        .catch(function(error) {
+            // The document probably doesn't exist.
+            console.error("Error updating document: ", error);
+        });
+
         console.log("device 1 triggered");
     }if(sessionStorage.getItem("device2") != null){
         var docRef = db.collection("caller").doc(sessionStorage.getItem("device2"));
@@ -119,7 +134,20 @@ function Caller(){
             var row = `<h3>Currently Dialing : ${doc.data().name}</h3>
                          ${doc.data().contact}<br>`
             device_two.innerHTML = row;
+            axios({
+                url:`https://ed1572733e7d.ngrok.io/call?name=${doc.data().name}&arrears=${doc.data().arrears}&number=${doc.data().contact}&dpd=${doc.data().dpd}&index=${doc.data().id}`,
+                method:`GET`
+              })
         });//dial using device 1
+        return docRef.update({
+            device: 'device2'
+        }).then(function() {
+            console.log("Document successfully updated!");
+        })
+        .catch(function(error) {
+            // The document probably doesn't exist.
+            console.error("Error updating document: ", error);
+        });
         console.log("device 2 triggered");
     }
 
