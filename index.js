@@ -148,6 +148,7 @@ function Caller(){
             // The document probably doesn't exist.
             console.error("Error updating document: ", error);
         });
+       
         console.log("device 2 triggered");
     }
 
