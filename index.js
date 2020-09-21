@@ -70,7 +70,7 @@ db.collection("caller").onSnapshot(function(querySnapshot) {
 
 
 
-setInterval(Caller, 2000); //calls the function every 2 seconds
+setInterval(Caller, 5000); //calls the function every 5 seconds
 function Caller(){
     
     db.collection("caller").onSnapshot(function(querySnapshot) {
@@ -124,6 +124,8 @@ function Caller(){
                     // The document probably doesn't exist.
                     console.error("Error updating document: ", error);
                 });
+
+                sessionStorage.removeItem("device1")
             }
             
         });
@@ -149,6 +151,7 @@ function Caller(){
                     // The document probably doesn't exist.
                     console.error("Error updating document: ", error);
                 });
+                sessionStorage.removeItem("device2")
             }
             
         });//dial using device 1
