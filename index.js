@@ -71,7 +71,7 @@ db.collection("caller").onSnapshot(function(querySnapshot) {
 
 
 
-document.getElementById("initialze").innerHTML = Caller(); 
+//document.getElementById("initialze").innerHTML = Caller(); 
 
 setInterval(Caller, 5000); //calls the function every 5 seconds
 function Caller(){
