@@ -73,12 +73,16 @@
         <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
         <br><br>
         <!--<p id="initialze"></p>-->
-        <h1>Users</h1>
-        <h2>Device 1</h2>
-        <div class="device-one" id="device_one">                    
-        </div>
-        <h2>Device 2</h2>
-        <div class="device-two" id="device_two">                    
+        <div class="display" id="display">
+          <p id="demo"></p>
+          <h1>Users</h1>
+          <h2>Device 1</h2>
+          <div class="device-one" id="device_one">   
+            <h3>Connecting</h3>
+          </div>
+          <h2>Device 2</h2>
+          <div class="device-two" id="device_two">                    
+          </div>
         </div>
     
         <!-- <div class="main-list" id="list_div">
@@ -112,7 +116,7 @@
         firebase.initializeApp(firebaseConfig);
         firebase.analytics();
         </script>
-        <script src="index.js"></script>
+        <script src="call.js"></script>
         
         
         
