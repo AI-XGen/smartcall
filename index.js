@@ -17,7 +17,8 @@ function storedata(){
         arrears: arrears,
         dpd: dpd,
         status: 'new', // new , ongoing, done
-        device: 'null' //null,device1,device2
+        device: 'null', //null,device1,device2
+        count:'1' //max number of calls can be 3
     })
     .then(function() {
         console.log("Document successfully written!");
