@@ -47,7 +47,7 @@ function Caller(){
                         console.log("first if");
                         console.log(doc.data().id);
                         axios({
-                            url:`https://cf5aec76845f.ngrok.io/call?name=${doc.data().name}&arrears=${doc.data().arrears}&number=${doc.data().contact}&dpd=${doc.data().dpd}&index=${doc.data().id}`,
+                            url:`https://6410b3e03109.ngrok.io/call?name=${doc.data().name}&arrears=${doc.data().arrears}&number=${doc.data().contact}&dpd=${doc.data().dpd}&index=${doc.data().id}`,
                             method:`GET`
                             })
                         var row = `<h3 style="color:blue">Currently Dialing</h3><h3> &nbsp;&nbsp;&nbsp;&nbsp; ${doc.data().name}</h3>
@@ -91,7 +91,7 @@ function Caller(){
                     console.log("2nd if");
                     console.log(doc.data().id);
                     axios({
-                        url:`https://39ddda51c02e.ngrok.io/call?name=${doc.data().name}&arrears=${doc.data().arrears}&number=${doc.data().contact}&dpd=${doc.data().dpd}&index=${doc.data().id}`,
+                        url:`https://230639d09b00.ngrok.io/call?name=${doc.data().name}&arrears=${doc.data().arrears}&number=${doc.data().contact}&dpd=${doc.data().dpd}&index=${doc.data().id}`,
                         method:`GET`
                         })
                     var row = `<h3 style="color:blue">Currently Dialing</h3><h3> &nbsp;&nbsp;&nbsp;&nbsp; ${doc.data().name}</h3>
