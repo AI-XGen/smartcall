@@ -43,7 +43,7 @@ function Caller(){
             querySnapshot.forEach(function(doc) {
                 console.log(doc.data().status);
                 if(doc.data().status == 'new'){
-                    if((sessionStorage.getItem("device1") == null)&&(sessionStorage.getItem("device2") != doc.data().id)){
+                    if((sessionStorage.getItem("device1") == null)&&(sessionStorage.getItem("device2") != doc.data().id)&&(parseInt(doc.data().count)<4)){
                         console.log("first if");
                         console.log(doc.data().id);
                         axios({
@@ -55,10 +55,14 @@ function Caller(){
                         device_one.innerHTML = row;          
                         sessionStorage.setItem("device1",doc.data().id);
                         
+                        calCount = parseInt(doc.data().count);
+                        calCount = calCount + 1 ;
+
                         var docRef = db.collection("caller").doc(doc.data().id);
                         docRef.get().then(function(doc) {
                             return docRef.update({
-                                device: 'device1'
+                                device: 'device1',
+                                count: calCount 
                             }).then(function() {
                                 console.log("Document successfully updated!");
                             })
@@ -82,12 +86,14 @@ function Caller(){
                             });
 
                         });
+                        
+
                     }
                     
                     setTimeout(() => {  console.log("2sec delay"); }, 2000); 
                 }
             if(doc.data().status == 'new'){
-                if((sessionStorage.getItem("device2") == null)&&(sessionStorage.getItem("device1") != doc.data().id)){
+                if((sessionStorage.getItem("device2") == null)&&(sessionStorage.getItem("device1") != doc.data().id)&&(parseInt(doc.data().count)<4)){
                     console.log("2nd if");
                     console.log(doc.data().id);
                     axios({
@@ -99,10 +105,14 @@ function Caller(){
                     device_two.innerHTML = row;          
                     sessionStorage.setItem("device2",doc.data().id);
 
+                    calCount = parseInt(doc.data().count);
+                    calCount = calCount + 1 ;
+
                     var docRef = db.collection("caller").doc(doc.data().id);
                     docRef.get().then(function(doc) {
                         return docRef.update({
-                            device: 'device2'
+                            device: 'device2',
+                            count: calCount
                         }).then(function() {
                             console.log("Document successfully updated!");
                         })
