@@ -47,7 +47,7 @@ function Caller(){
                         console.log("first if");
                         console.log(doc.data().id);
                         axios({
-                            url:`https://6410b3e03109.ngrok.io/call?name=${doc.data().name}&arrears=${doc.data().arrears}&number=${doc.data().contact}&dpd=${doc.data().dpd}&index=${doc.data().id}`,
+                            url:`https://4136cb79fb8d.ngrok.io/call?name=${doc.data().name}&arrears=${doc.data().arrears}&number=${doc.data().contact}&dpd=${doc.data().dpd}&index=${doc.data().id}`,
                             method:`GET`
                             })
                         var row = `<h3 style="color:blue">Currently Dialing</h3><h3> &nbsp;&nbsp;&nbsp;&nbsp; ${doc.data().name}</h3>
